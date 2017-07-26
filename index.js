@@ -23,27 +23,27 @@ function renderSASS(input, output) {
 module.exports = {
     hooks: {
         // Compile sass as CSS
-        init: function() {
+        init: function () {
             var book = this;
 
             var styles = book.config.get('styles');
 
-            return _.reduce(styles, function(prev, filename, type) {
-                return prev.then(function() {
+            return _.reduce(styles, function (prev, filename, type) {
+                return prev.then(function () {
                     var extension = path.extname(filename).toLowerCase();
                     if (extension != '.sass' && extension != '.scss') return;
 
                     book.log.info.ln('compile sass file: ', filename);
 
                     // Temporary CSS file
-                    var tmpfile = type+'-'+Date.now()+'.css';
+                    var tmpfile = type + '-' + Date.now() + '.css';
 
                     // Replace config
-                    book.config.set('styles.'+type, tmpfile);
+                    book.config.set('styles.' + type, tmpfile);
 
                     return renderSASS(
                         book.resolve(filename),
-                        path.resolve(book.options.output, tmpfile)
+                        path.resolve(book.output.root(), tmpfile)
                     );
                 });
             }, Q());
