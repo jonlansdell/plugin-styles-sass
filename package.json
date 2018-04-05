@@ -7,9 +7,9 @@
     "gitbook": ">=2.5.0"
   },
   "dependencies": {
-    "q": "^1.1.2",
-    "node-sass": "^4.7.2",
-    "lodash": "^4.0.0"
+    "q": "^1.5.1",
+    "node-sass": "^4.8.3",
+    "lodash": "^3.10.1"
   },
   "homepage": "https://github.com/Nasicus/plugin-styles-sass",
   "repository": {
