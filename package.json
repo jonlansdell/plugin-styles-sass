@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "q": "^1.5.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "lodash": "^3.10.1"
   },
   "homepage": "https://github.com/Nasicus/plugin-styles-sass",
